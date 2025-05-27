@@ -43,7 +43,8 @@ function Main() {
         }
 
         try {
-          var newUrl = "http://localhost:3232/api/data/getdata";
+          var newUrl =
+            "https://lead-generation-backend-hcip.onrender.com/api/data/getdata";
           const userData = await axios.post(newUrl, data);
           if (userData.data.success) {
             console.log("data sended");
