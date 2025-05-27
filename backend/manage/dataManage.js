@@ -24,13 +24,16 @@ const getData = async (req,res) => {
       company:company,
       message:message,
     });
-    await axios.post("http://localhost:5678/webhook-test/webhook/lead", {
-      fname: fname,
-      lname: lname,
-      email: email,
-      company: company,
-      message: message,
-    });
+    await axios.post(
+      "https://n8n-service-uh7d.onrender.com/webhook-test/webhook/lead",
+      {
+        fname: fname,
+        lname: lname,
+        email: email,
+        company: company,
+        message: message,
+      }
+    );
     return res.json({ success: true, data });
   } catch (error) {
     console.error(error);
